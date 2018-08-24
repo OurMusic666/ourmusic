@@ -1,9 +1,14 @@
+var array;
+
+function setElparam(info){
+	array=info;
+}
+
 $(document).ready(function(){
-  
   var myPlaylist = new jPlayerPlaylist({
     jPlayer: "#jplayer_N",
     cssSelectorAncestor: "#jp_container_N"
-  }, document.getElementById('arraySong').value, {
+  }, array, {
     playlistOptions: {
       enableRemoveControls: true,
       autoPlay: true
