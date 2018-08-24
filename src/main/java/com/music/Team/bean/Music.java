@@ -9,9 +9,9 @@ public class Music {
 	//歌曲名字
 	private String music_name;
 	//歌曲歌手名
-	private Integer music_singerid;
+	private Integer singer_id;
 	//专辑id
-	private Integer music_album;
+	private Integer album_id;
 	//歌词
 	private String music_lyr;
 	//会员（0/1）
@@ -35,17 +35,17 @@ public class Music {
 	public void setMusic_name(String music_name) {
 		this.music_name = music_name;
 	}
-	public Integer getMusic_singerid() {
-		return music_singerid;
+	public Integer getSinger_id() {
+		return singer_id;
 	}
-	public void setMusic_singerid(Integer music_singerid) {
-		this.music_singerid = music_singerid;
+	public void setSinger_id(Integer singer_id) {
+		this.singer_id = singer_id;
 	}
-	public Integer getMusic_album() {
-		return music_album;
+	public Integer getAlbum_id() {
+		return album_id;
 	}
-	public void setMusic_album(Integer music_album) {
-		this.music_album = music_album;
+	public void setAlbum_id(Integer album_id) {
+		this.album_id = album_id;
 	}
 	public String getMusic_lyr() {
 		return music_lyr;

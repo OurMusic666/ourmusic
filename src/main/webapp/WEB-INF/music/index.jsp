@@ -1,26 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en" class="app">
-<head>  
-  <meta charset="utf-8" />
-  <title>Musik | Web Application</title>
-  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <link rel="stylesheet" href="js/jPlayer/jplayer.flat.css" type="text/css" />
-  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-  <link rel="stylesheet" href="css/animate.css" type="text/css" />
-  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
-  <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" />
-  <link rel="stylesheet" href="css/font.css" type="text/css" />
-  <link rel="stylesheet" href="css/app.css" type="text/css" />  
-    <!--[if lt IE 9]>
-    <script src="js/ie/html5shiv.js"></script>
-    <script src="js/ie/respond.min.js"></script>
-    <script src="js/ie/excanvas.js"></script>
-  <![endif]-->
-</head>
+
+<!-- head  引用 -->
+<%@include file="header.jsp" %>
+
 <body class="">
+		<!-- 隐藏域传 -->
+	<input type = 'hidden' id = 'arraySong' name = 'arraySong' value = '[
+    {
+      title:"海阔天空",
+      artist:"Beyond",
+      mp3:"songs/Beyond.mp3",
+      poster: "images/m0.jpg"
+    }
+  ]'></input>
   <section class="vbox">
     <header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
       <div class="navbar-header aside bg-info nav-xs">
@@ -35,7 +26,8 @@
         <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
           <i class="icon-settings"></i>
         </a>
-      </div>      <ul class="nav navbar-nav hidden-xs">
+      </div>      
+      <ul class="nav navbar-nav hidden-xs">
         <li>
           <a href="#nav,.navbar-header" data-toggle="class:nav-xs,nav-xs" class="text-muted">
             <i class="fa fa-indent text"></i>
@@ -128,7 +120,8 @@
         <aside class="bg-black dk nav-xs aside hidden-print" id="nav">          
           <section class="vbox">
             <section class="w-f-md scrollable">
-              <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
+              <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" 
+              			data-distance="0" data-size="10px" data-railOpacity="0.2">
                 
 
 

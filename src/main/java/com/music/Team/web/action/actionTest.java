@@ -11,6 +11,6 @@ public class actionTest {
 		
 		System.out.println("success");
 		
-		return "redirect:/music/index.jsp";
+		return "index";
 	}
 }

@@ -9,7 +9,7 @@ public class Album {
 	//专辑名字
 	private String album_name;
 	//专辑歌手
-	private Integer album_singerid;
+	private Integer singer_id;
 	
 	public Integer getAlbum_id() {
 		return album_id;
@@ -23,11 +23,11 @@ public class Album {
 	public void setAlbum_name(String album_name) {
 		this.album_name = album_name;
 	}
-	public Integer getAlbum_singerid() {
-		return album_singerid;
+	public Integer getSinger_id() {
+		return singer_id;
 	}
-	public void setAlbum_singerid(Integer album_singerid) {
-		this.album_singerid = album_singerid;
+	public void setSinger_id(Integer singer_id) {
+		this.singer_id = singer_id;
 	}
 	
 	

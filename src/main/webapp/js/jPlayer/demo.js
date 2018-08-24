@@ -1,16 +1,9 @@
 $(document).ready(function(){
-
+  
   var myPlaylist = new jPlayerPlaylist({
     jPlayer: "#jplayer_N",
     cssSelectorAncestor: "#jp_container_N"
-  }, [
-    {
-      title:"Busted Chump",
-      artist:"ADG3",
-      mp3:"songs/Beyond.mp3",
-      poster: "images/m0.jpg"
-    }
-  ], {
+  }, document.getElementById('arraySong').value, {
     playlistOptions: {
       enableRemoveControls: true,
       autoPlay: true
@@ -21,7 +14,7 @@ $(document).ready(function(){
     keyEnabled: true,
     audioFullScreen: false
   });
-  
+  9
   $(document).on($.jPlayer.event.pause, myPlaylist.cssSelector.jPlayer,  function(){
     $('.musicbar').removeClass('animate');
     $('.jp-play-me').removeClass('active');
