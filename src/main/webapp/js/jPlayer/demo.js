@@ -1,14 +1,14 @@
 var array;
 
 function setElparam(info){
-	array=info;
+	eval("array="+info);
 }
 
 $(document).ready(function(){
   var myPlaylist = new jPlayerPlaylist({
     jPlayer: "#jplayer_N",
     cssSelectorAncestor: "#jp_container_N"
-  }, array, {
+  }, array , {
     playlistOptions: {
       enableRemoveControls: true,
       autoPlay: true
@@ -19,7 +19,7 @@ $(document).ready(function(){
     keyEnabled: true,
     audioFullScreen: false
   });
-  9
+
   $(document).on($.jPlayer.event.pause, myPlaylist.cssSelector.jPlayer,  function(){
     $('.musicbar').removeClass('animate');
     $('.jp-play-me').removeClass('active');

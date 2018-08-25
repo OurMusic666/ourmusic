@@ -13,8 +13,7 @@ public class AlbumBizImpl implements AlbumBiz{
 	private AlbumDao albumDao;
 	
 	public void insert(Album t) {
-		// TODO Auto-generated method stub
-		
+		albumDao.insert(t);
 	}
 
 	public void delete(Album t) {

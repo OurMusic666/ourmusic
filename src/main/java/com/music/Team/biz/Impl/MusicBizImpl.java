@@ -13,8 +13,7 @@ public class MusicBizImpl implements MusicBiz{
 	private MusicDao musicDao;
 	
 	public void insert(Music t) {
-		// TODO Auto-generated method stub
-		
+		musicDao.insert(t);
 	}
 
 	public void delete(Music t) {

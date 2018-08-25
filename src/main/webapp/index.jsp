@@ -1342,7 +1342,7 @@
   <script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
   <script type="text/javascript" src="js/jPlayer/demo.js"></script>
   <script type="text/javascript">
- 		 setElparam("${arraySongs }");
+  		setElparam("${arraySongs }");
   </script>
 
 </body>

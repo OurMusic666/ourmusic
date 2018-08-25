@@ -13,8 +13,7 @@ public class SingerBizImpl implements SingerBiz {
 	private SingerDao singerDao;
 	
 	public void insert(Singer t) {
-		// TODO Auto-generated method stub
-		
+		singerDao.insert(t);
 	}
 
 	public void delete(Singer t) {
