@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Options;
 import org.springframework.stereotype.Service;
 
 import com.music.Team.bean.Singer;
-@Service
+
 public interface SingerDao extends BaseDao<Singer>{
 
 	@Insert("insert singer music values(null,#{singer_name},#{singer_pic},#{singer_desc})")

@@ -63,17 +63,17 @@
     </bean>
 	
 	<!-- spring 事务切面配置 -->
-    <tx:advice id="txAdvice" transaction-manager="txManager">
-        <!-- the transactional semantics... -->
+   <!--  <tx:advice id="txAdvice" transaction-manager="txManager">
+        the transactional semantics...
         <tx:attributes>
-            <!-- all methods starting with 'get' are read-only -->
-            			<!-- 所有get开头的方法 -->
+            all methods starting with 'get' are read-only
+            			所有get开头的方法
             <tx:method name="get*" read-only="true"/>
-            <tx:method name="find*" read-only="true"/>
-            <!-- 其他所有方法			隔离级别		超时	“-1”不判断一直等待-->
+            <tx:method name="find*s" read-only="true"/>
+            其他所有方法			隔离级别		超时	“-1”不判断一直等待
             <tx:method name="*" isolation="DEFAULT" timeout="-1"/>
-            <!--  需要在什么异常下回滚rollback-for=""	在什么情况下不需要回滚 no-rollback-for=""
-            	回滚规则：默认情况下，挡方法抛出运行期异常（RuntimeException），则会触发事物回滚 -->
+             需要在什么异常下回滚rollback-for=""	在什么情况下不需要回滚 no-rollback-for=""
+            	回滚规则：默认情况下，挡方法抛出运行期异常（RuntimeException），则会触发事物回滚
         </tx:attributes>
     </tx:advice>
     
@@ -81,5 +81,5 @@
     	<aop:pointcut expression="execution(* com.music.Team.biz.*.*(..))" id="txA"/>
     	<aop:advisor advice-ref="txAdvice" pointcut="txA"/>
     </aop:config>
-    
+     -->
 </beans>

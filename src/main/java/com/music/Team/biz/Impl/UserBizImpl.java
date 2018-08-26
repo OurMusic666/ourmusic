@@ -10,13 +10,7 @@ import com.music.Team.dao.UserDao;
 public class UserBizImpl implements UserBiz {
 
 	@Autowired
-	private UserDao userDao;
-	
-	public void insert(User t) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	private UserDao userDao;		
 	public void delete(User t) {
 		// TODO Auto-generated method stub
 		
@@ -38,5 +32,51 @@ public class UserBizImpl implements UserBiz {
 
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
+	}
+
+	@Override
+	public String createUser(User t) {
+		try{
+			userDao.insertUser(t);
+			return "恭喜您注册成功您的用户名为:"+t.getUser_name();
+			}catch (Exception e){
+				e.printStackTrace();
+				return "注册失败请稍后再试";
+			}
+	}
+
+	@Override
+	public String selectName(User t) {
+		t= userDao.selectName(t.getUser_name());
+		try{
+		if(t.getUser_id()!=null){
+			return t.getUser_name();
+			
+		}else{
+			return "";
+		}
+		
+		}catch(NullPointerException e){
+			e.printStackTrace();
+			return "";
+		}
+	}
+
+	@Override
+	public String selectUser(User t) {
+		t= userDao.selectUser(t.getUser_email(), t.getUser_pwd());
+		try{
+			if(t.getUser_id()!=null&&!t.getUser_id().equals("")){
+				
+				return t.getUser_name();
+			}else{
+				return "";
+			}
+			
+		}catch(NullPointerException e){
+			e.printStackTrace();
+			return "";
+		}
+		
 	}
 }

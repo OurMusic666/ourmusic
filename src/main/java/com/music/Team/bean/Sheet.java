@@ -2,7 +2,6 @@ package com.music.Team.bean;
 
 import org.springframework.stereotype.Component;
 
-@Component("sheet")
 public class Sheet {
 	//收藏夹id
 	private Integer sheet_id;

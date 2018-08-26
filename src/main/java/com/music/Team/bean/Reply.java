@@ -2,7 +2,6 @@ package com.music.Team.bean;
 
 import org.springframework.stereotype.Component;
 
-@Component("reply")
 public class Reply {
 	//评论id
 	private Integer reply_id;

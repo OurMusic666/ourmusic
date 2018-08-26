@@ -1,8 +1,6 @@
 package com.music.Team.bean;
 
-import org.springframework.stereotype.Component;
 
-@Component("music")
 public class Music {
 	//歌曲id
 	private Integer music_id;
