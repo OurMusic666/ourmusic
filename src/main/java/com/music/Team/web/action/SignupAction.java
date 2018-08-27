@@ -1,13 +1,18 @@
 package com.music.Team.web.action;
 
 
+
+import java.io.IOException;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.music.Team.bean.User;
 import com.music.Team.biz.UserBiz;
@@ -60,23 +65,30 @@ public class SignupAction {
 	}
 	//对应ajax selectName 请求
 	@RequestMapping("/selectName")
-	public void selectName(Model model,User user,HttpServletRequest request,String name){
-		
+	public void selectName(Model model,User user,HttpServletRequest request,String name,HttpServletResponse response) throws IOException {
 		System.out.println("name="+name);
+		if(name==null||name.equals("")){
+			 response.getWriter().write("3");
+			
+			return;
+		}
+		
 		user.setUser_name(name);
 		
 		String namemsg= sbiz.selectName(user);
 		
 		if(namemsg.equals("")||namemsg==null){
-			System.out.println("用户名未注册");
-			request.setAttribute("", "");
 			
+			 response.getWriter().write("2");
+			  System.out.println("用户名未注册");
+			  request.setAttribute("msg", "用户名未注册");			
 		}else{
+			response.getWriter().write("1");
 			System.out.println("用户名已被注册");
 			model.addAttribute("msg", "用户名已被注册");
-			
 
 		}
+		
 		
 		
 	}

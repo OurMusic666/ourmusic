@@ -5,118 +5,8 @@
 <head>  
   <meta charset="utf-8" />
   <title>Musik | Web Application</title>
-  <style type="text/css">
-
-p{margin:0;padding:0;}
-
-</style>
    
-  <script type="text/javascript" src="js/jquery.min.js">  
-  </script>
-  <script type="text/javascript">
-  function sendCode(){
-  var email={email: $("#email").val()};
   
-  if($("#email").val()=="" || $("#email").val()==null){
-	  alert("邮箱不能为空！");
-  }else{
-	  alert("邮箱已发送");
-  $.post("sendCode",email,function(email){
-	 
-  });
-  }
- 	}
-  
-   function selectUser(){
-	  
-	  var name={name: $("#name").val()};
-	  $.post("selectUser",name,function(name){
-		 
-	  });
-
-  }
-  
-  function showmsg() {
-		  if($("#name").val()=="" || $("#name").val()==null){
-		  $("#msgname").text("请输入用户名");
-	  }else{
-		  $("#msgname").text("");
-
-	  }/* else{
-		  $("#name").mouseout(function(){
-			  $("#msgname").text("");
-			  var name={name: $("#name").val()};
-			  if($("#name").val()!="" || $("#name").val()!=null){
-				  $.post("selectName",name,function(name){
-					  
-				  });
-				  
-			  }
-			
-		  });
-	  } */
-			
-} 
-  	function pwdmsg(){
-  	  if($("#pwd").val()=="" || $("#pwd").val()==null){
-  		  $("#msgpwd").text("请输入密码");
-  	  }else{
-		  $("#msgpwd").text("");
-		  
-		/*   $("#msgpwd").mouseout(function(){
-			  if($("#pwd").val()!="" || $("#pwd").val()!=null){
-		  		  $("#msgname").text("");
-			  }
-			  
-			  
-		  });
-		   */
-		  }
-	  
-  	}
-  	
-  	function emailmsg(){
-    	  if($("#email").val()=="" || $("#email").val()==null){
-    		  $("#msgemail").text("请输入邮箱");
-    	  }else{
-  		  $("#msgemail").text("");
-  		  
-  		/*   $("#msgpwd").mouseout(function(){
-  			  if($("#pwd").val()!="" || $("#pwd").val()!=null){
-  		  		  $("#msgname").text("");
-  			  }
-  			  
-  			  
-  		  });
-  		   */
-  		  }
-  	  
-    	   
-    		
-    		
-    	}
-/*   $(document).ready(function(){
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	 
-	  $("#name").mouseout(function(){
-		  var name={name: $("#name").val()};
-		  if($("#name").val()!="" || $("#name").val()!=null){
-			  $.post("selectName",name,function(name){
-				  
-			  });
-			  
-		  }
-		
-	  }); 
-	});  
-   */
-  </script>
   <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <link rel="stylesheet" href="js/jPlayer/jplayer.flat.css" type="text/css" />
@@ -144,14 +34,15 @@ p{margin:0;padding:0;}
         <b  style=" color: red; margin-left: 1px ; padding-left:90px" >${msg}</b>
         
          
+           
+         
         <form action="signup.do">
           <div class="form-group">
             <input onclick="showmsg()" name="user_name" id="name" placeholder="用户名" class="form-control rounded input-lg text-center no-border" >
-          <b  id="msgname"  style=" color: red; margin-left: 1px ; padding-left:30px" >${msgname}</b>
+          <b  id="msgname"  style=" color:white; margin-left: 1px ; padding-left:30px" >${msgname}</b>
         
           </div>
           
-    
           <div class="form-group" >
              
             <input id="pwd" onclick="pwdmsg()" name="user_pwd" type="password" placeholder="密码" class="form-control rounded input-lg text-center no-border">
@@ -179,7 +70,7 @@ p{margin:0;padding:0;}
           <p class="text-muted text-center"><small>Already have an account?</small></p>
           <a href="signin.html" class="btn btn-lg btn-info btn-block btn-rounded">登录</a>
         </form>
-        
+      
         
       </section>
     </div>
@@ -203,6 +94,7 @@ p{margin:0;padding:0;}
   <script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
   <script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
   <script type="text/javascript" src="js/jPlayer/demo.js"></script>
+ <script type="text/javascript" src="ourJs/our.js"></script>
 
 </body>
 </html>
