@@ -1,6 +1,9 @@
 package com.music.Team.util;
 
 import java.io.File;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 import org.jaudiotagger.audio.mp3.MP3File;
@@ -20,6 +23,7 @@ public class SongsBuilder {
 	 * 提供一个方法  只需要用户输入绝对地址   即可查出地址下的所有文件  
 	 * TODO   还没有确保只查出 mp3文件
 	 */
+	
 	public static ArrayList<MusicInfo> getMusic(String folderPath){
 		scanFilesWithRecursion(folderPath);
 		System.out.println(scanFiles);
@@ -30,7 +34,6 @@ public class SongsBuilder {
 	 * @throws Exception 
 	 */
 	private static void scanFilesWithRecursion(String folderPath){
-		ArrayList<String> dirctorys = new ArrayList<String>();
 		File directory = new File(folderPath);
 		if(!directory.isDirectory()){
 			try {
@@ -40,23 +43,24 @@ public class SongsBuilder {
 			}
 		}
 		if(directory.isDirectory()){
+			pushRodomName(folderPath);
 			File [] filelist = directory.listFiles();
 			for(int i = 0; i < filelist.length; i ++){
 				/**如果当前是文件夹，进入递归扫描文件夹**/
 				if(filelist[i].isDirectory()){
-					dirctorys.add(filelist[i].getAbsolutePath());
 					/**递归扫描下面的文件夹**/
 					scanFilesWithRecursion(filelist[i].getAbsolutePath());
 				}
 			/**非文件夹**/
 				else{
-					System.out.println("修改前的路径"+filelist[i].getAbsolutePath());
 					scanFiles.add(filelist[i].getAbsolutePath());
+					System.out.println("更改前的路径:"+filelist[i].getAbsolutePath());
 					getContent(filelist[i].getAbsolutePath());
 				}
 			}
 		}
 		System.out.println("=============查询完成!=================");
+		System.out.println(scanFiles);
 		System.out.println("\t\t共查到数据:"+scanFiles.size()+"条");
 	}
 	
@@ -77,9 +81,36 @@ public class SongsBuilder {
 			Info.setAlbum(album.substring(START,album.length()-3));
 			Info.setUrl(filepath);
 		musicInfo.add(Info);
+		System.out.println(Info.toString());
 		} catch (Exception e) {
 			System.out.println("没有获取到任何信息");
 		}
-		System.out.println("All Info："+mp3File.displayStructureAsPlainText());
+	}
+	
+	private static void pushRodomName(String args) {
+		File rootfile=new File(args);
+		File[]files=rootfile.listFiles();
+		String newstr=args;
+		for(int i=0;i<files.length;i++){
+			if(files[i].isFile()){
+				System.out.println("旧地址："+files[i].getAbsolutePath());
+				newstr=args+File.separator+ToMD5(""+i)+".mp3";
+				System.out.println("新地址："+newstr);
+				File file=new File(newstr);
+				files[i].renameTo(file);
+			}
+		}
+		System.out.println("修改完成！共修改"+files.length+"条数据！");
+	}
+
+	private static String ToMD5(String str){
+		MessageDigest md5=null;
+		try {
+			md5 = MessageDigest.getInstance("MD5");
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		}
+		md5.update(str.getBytes());
+		return new BigInteger(1,md5.digest()).toString(16);
 	}
 }
