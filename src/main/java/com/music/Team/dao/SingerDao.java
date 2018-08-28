@@ -2,21 +2,18 @@ package com.music.Team.dao;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
-import org.springframework.stereotype.Service;
 
 import com.music.Team.bean.Singer;
 
 public interface SingerDao extends BaseDao<Singer>{
 
-	@Insert("insert singer music values(null,#{singer_name},#{singer_pic},#{singer_desc})")
+	@Insert("insert into singer values (null,#{singer_name},#{singer_desc})")
 	@Options(useGeneratedKeys=true,keyProperty="singer_id",keyColumn="singer_id")
-	void insert(Singer t);
+	void insert(Singer singer);
 
-	void delete(Singer t);
+	void delete(Singer singer);
 
-	void update(Singer t);
+	void update(Singer singer);
 
 	Singer select();
-	
-	
 }

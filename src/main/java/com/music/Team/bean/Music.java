@@ -10,6 +10,10 @@ public class Music {
 	private Integer singer_id;
 	//专辑id
 	private Integer album_id;
+	//歌曲图片
+	private String music_pic;
+	//路径
+	private String music_url;
 	//歌词
 	private String music_lyr;
 	//会员（0/1）
@@ -50,6 +54,18 @@ public class Music {
 	}
 	public void setMusic_lyr(String music_lyr) {
 		this.music_lyr = music_lyr;
+	}
+	public String getMusic_pic() {
+		return music_pic;
+	}
+	public void setMusic_pic(String music_pic) {
+		this.music_pic = music_pic;
+	}
+	public String getMusic_url() {
+		return music_url;
+	}
+	public void setMusic_url(String music_url) {
+		this.music_url = music_url;
 	}
 	
 }

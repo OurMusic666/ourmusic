@@ -1096,7 +1096,7 @@
                   <div class="row m-t-lg m-b-lg">
                     <div class="col-sm-6">
                       <div class="bg-primary wrapper-md r">
-                        <a href="#">
+                        <a href="signin.jsp">
                           <span class="h4 m-b-xs block"><i class=" icon-user-follow i-lg"></i> Login or Create account</span>
                           <span class="text-muted">Save and share your playlist with your friends when you log in or create an account.</span>
                         </a>

@@ -1,7 +1,5 @@
 package com.music.Team.bean;
 
-import org.springframework.stereotype.Component;
-
 public class User {
 	//用户id
 	private Integer user_id;
@@ -10,15 +8,15 @@ public class User {
 	//用户密码
 	private String user_pwd;
 	//用户生日
-	private String user_bir;
+//	private String user_bir;
 	//用户性别
-	private String user_sex;
+//	private String user_sex;
 	//用户密码
 	private String user_email;
 	//是否是会员
 	private Integer user_isMember;
 	//用户上一次所播放的歌曲
-	private String user_lastMusic;
+//	private String user_lastMusic;
 	
 	public Integer getUser_id() {
 		return user_id;
@@ -50,23 +48,23 @@ public class User {
 	public void setUser_isMember(Integer user_isMember) {
 		this.user_isMember = user_isMember;
 	}
-	public String getUser_bir() {
-		return user_bir;
-	}
-	public void setUser_bir(String user_bir) {
-		this.user_bir = user_bir;
-	}
-	public String getUser_sex() {
-		return user_sex;
-	}
-	public void setUser_sex(String user_sex) {
-		this.user_sex = user_sex;
-	}
-	public String getUser_lastMusic() {
-		return user_lastMusic;
-	}
-	public void setUser_lastMusic(String user_lastMusic) {
-		this.user_lastMusic = user_lastMusic;
-	}
+//	public String getUser_bir() {
+//		return user_bir;
+//	}
+//	public void setUser_bir(String user_bir) {
+//		this.user_bir = user_bir;
+//	}
+//	public String getUser_sex() {
+//		return user_sex;
+//	}
+//	public void setUser_sex(String user_sex) {
+//		this.user_sex = user_sex;
+//	}
+//	public String getUser_lastMusic() {
+//		return user_lastMusic;
+//	}
+//	public void setUser_lastMusic(String user_lastMusic) {
+//		this.user_lastMusic = user_lastMusic;
+//	}
 	
 }

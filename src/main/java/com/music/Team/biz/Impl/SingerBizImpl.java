@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.music.Team.bean.Singer;
 import com.music.Team.biz.SingerBiz;
 import com.music.Team.dao.SingerDao;
+
 @Service
 public class SingerBizImpl implements SingerBiz {
 
@@ -34,9 +35,13 @@ public class SingerBizImpl implements SingerBiz {
 	public SingerDao getSingerDao() {
 		return singerDao;
 	}
-
+	
 	public void setSingerDao(SingerDao singerDao) {
 		this.singerDao = singerDao;
 	}
 
+	@Override
+	public int insertSinger(Singer t) {
+		return 0;
+	}
 }

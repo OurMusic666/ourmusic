@@ -5,6 +5,7 @@ public class MusicInfo {
 	private String album;
 	private String name;
 	private String url;
+	private String pic;
 	
 	public String getUrl() {
 		return url;
@@ -30,10 +31,16 @@ public class MusicInfo {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public String getPic() {
+		return pic;
+	}
+	public void setPic(String pic) {
+		this.pic = pic;
+	}
 	@Override
 	public String toString() {
-		return "MusicInfo [singer=" + singer + ", album=" + album + ", name=" + name + ", url=" + url + "]";
+		return "MusicInfo [singer=" + singer + ", album=" + album + ", name=" + name + ", url=" + url + ", pic=" + pic
+				+ "]";
 	}
-	
-	
 }

@@ -12,5 +12,5 @@ public interface SingerBiz {
 
 	Singer select();
 	
-	
+	int insertSinger(Singer t);
 }

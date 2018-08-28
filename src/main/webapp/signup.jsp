@@ -68,7 +68,7 @@
           <button  type="submit" class="btn btn-lg btn-warning lt b-white b-2x btn-block btn-rounded"><i class="icon-arrow-right pull-right"></i><span class="m-r-n-lg">注册</span></button>
           <div class="line line-dashed"></div>
           <p class="text-muted text-center"><small>Already have an account?</small></p>
-          <a href="signin.html" class="btn btn-lg btn-info btn-block btn-rounded">登录</a>
+          <a href="signin.jsp" class="btn btn-lg btn-info btn-block btn-rounded">登录</a>
         </form>
       
         

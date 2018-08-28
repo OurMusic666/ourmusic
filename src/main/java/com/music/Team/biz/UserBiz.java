@@ -4,8 +4,6 @@ import com.music.Team.bean.User;
 
 public interface UserBiz {
 
-
-
 	void delete(User t);
 
 	void update(User t);
